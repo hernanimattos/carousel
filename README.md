@@ -1,6 +1,10 @@
 # Carousel
+
+## Depêndencies
+ - Nodejs
+ 
 # Clone repository
 * cd carousel
-  wirite commands
+  write commands
   - npm install
   - gulp
