@@ -4,7 +4,8 @@
  - Nodejs
  
 # Clone repository
-* cd carousel
-  write commands
+## Write commands
+
+  -cd carousel
   - npm install
   - gulp
