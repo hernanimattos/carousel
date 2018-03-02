@@ -6,6 +6,6 @@
 # Clone repository
 ## Write commands
 
-  -cd carousel
+  - cd carousel
   - npm install
   - gulp
