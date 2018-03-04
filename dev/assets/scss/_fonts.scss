@@ -1,22 +1,20 @@
 
 @font-face {
-	src: url('/fonts/averta-regular-webfont.woff2') format('woff2'), url('/fonts/averta-regular-webfont.woff') format('woff');
+	src: url('../fonts/averta-regular-webfont.woff2') format('woff2'), url('../fonts/averta-regular-webfont.woff') format('woff');
 	font-style: normal;
 	font-weight: normal;
 	font-family: 'Averta Regular';
 }
 
 @font-face {
-	src: url('/fonts/averta-bold-webfont.woff2') format('woff2'), url('/fonts/averta-bold-webfont.woff') format('woff');
+	src: url('../fonts/averta-bold-webfont.woff2') format('woff2'), url('../fonts/averta-bold-webfont.woff') format('woff');
 	font-style: normal;
 	font-weight: normal;
 	font-family: 'Averta Bold';
 }
 @font-face {
-	src: url('/fonts/averta-light-webfont.woff2') format('woff2'), url('/fonts/averta-light-webfont.woff') format('woff');
+	src: url('../fonts/averta-light-webfont.woff2') format('woff2'), url('../fonts/averta-light-webfont.woff') format('woff');
 	font-style: normal;
 	font-weight: normal;
 	font-family: 'Averta Light';
-
-	color: red;
 }

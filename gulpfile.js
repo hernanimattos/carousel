@@ -14,6 +14,7 @@ const gutil = require('gulp-util');
 const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
 const $ = require('gulp-load-plugins')();
+const browserify = require("browserify");
 
 const sassPath = [
 	'node_modules/foundation-sites/scss'
@@ -24,31 +25,41 @@ const ENVORIMENT  = {
 	nodemodules: './node_modules/',
 	dev:{
 		root: './dev',
-		img:'img/**/*',
-		js:'js/*.js',
+		img:'img/*.*',
+		js:'js/**/*.js',
 		css: 'scss/*.scss',
 		html:'*.html',
+		fonts:'fonts/*',
 	},
 	dist:{
 		root:'./dist',
 		img:'img/',
 		js:'js/',
 		css: 'css/',
-		html:'*.html'
+		html:'*.html',
+		fonts:'fonts/',
 	},
 };
 
 gulp.task('js', function () {
-	gulp.src(`${ENVORIMENT.dev.root}/${ENVORIMENT.assets}/${ENVORIMENT.dev.js}`)
+	gulp
+    .src(`${ENVORIMENT.dev.root}/${ENVORIMENT.assets}/${ENVORIMENT.dev.js}`)
     .pipe(babel({ presets: ["env"] }))
+
     .pipe(uglify())
     .pipe(concat("scripts.js"))
+    // .pipe(browserify(`${ENVORIMENT.dist.root}/${ENVORIMENT.assets}/${ENVORIMENT.dist.js}`))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write("."))
     .on("error", function(err) {
       gutil.log(gutil.colors.red("[Error]"), err.toString());
     })
     .pipe(gulp.dest(`${ENVORIMENT.dist.root}/${ENVORIMENT.assets}/${ENVORIMENT.dist.js}`));
+});
+gulp.task("fonts", () => {
+  return gulp
+    .src(`${ENVORIMENT.dev.root}/${ENVORIMENT.assets}/${ENVORIMENT.dev.fonts}`)
+    .pipe(gulp.dest(`${ENVORIMENT.dist.root}/${ENVORIMENT.assets}/${ENVORIMENT.dist.fonts}`));
 });
 
 gulp.task('css',function () {
@@ -70,7 +81,8 @@ gulp.task('css',function () {
     .pipe(postcss(plugins))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(`${ENVORIMENT.dist.root}/${ENVORIMENT.assets}/${ENVORIMENT.dist.css}`));
+	.pipe(gulp.dest(`${ENVORIMENT.dist.root}/${ENVORIMENT.assets}/${ENVORIMENT.dist.css}`))
+	.pipe(browserSync.stream());
 });
 
 gulp.task('image', () =>
@@ -85,9 +97,9 @@ gulp.task('watch', function () {
 	gulp.watch(`${ENVORIMENT.dev.root}/${ENVORIMENT.assets}/${ENVORIMENT.dev.img}`, ['image'])
 });
 
-gulp.task('serve',['css','image','js','watch'], function() {
+gulp.task('serve',['css','image','js', 'fonts','watch'], function() {
 
-		browserSync.init({
+			browserSync.init({
 			server: `${ENVORIMENT.dist.root}`,
 		}
 	);

@@ -1,0 +1,46 @@
+.header {
+	font-family: $font-bold;
+	.logo {
+		// float: left;
+		padding: 20px;
+		margin-right: 20px;
+		img {
+			margin: 20px;
+		}
+	}
+	.title {
+		margin-top: 30px;
+
+		font-weight: 600;
+		font-size: 20px;
+		font-family: $font-bold;
+		// width: 800px;
+
+		white-space: nowrap;
+		h2 {
+			font-weight: 600;
+			font-size: 30px;
+		}
+	}
+	.year {
+		h3 {
+			font-weight: 400;
+			font-size: 20px;
+		}
+		.line-bottom {
+			display: block;
+
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 27px;
+
+			background-image: radial-gradient(#a3fe6b 25%,transparent 45%);
+			background-position: 80px 25px;
+			background-size: 80% 5px;
+			background-repeat: no-repeat;
+		}
+		p {
+			font-size: 20px;
+		}
+	}
+}

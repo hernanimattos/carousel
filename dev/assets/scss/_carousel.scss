@@ -1,0 +1,200 @@
+
+div.carousel-callout {
+	width: 900px;
+	height: 600px;
+
+	padding: 0;
+	margin: 0 auto;
+
+	overflow: hidden;
+
+	vertical-align: bottom;
+
+	background-color: $background;
+
+	transition: all 1s ease-in-out;
+
+	@media (max-width: 768px) {
+		width: 90%;
+	}
+
+	.carousel-wrapper {
+		position: relative;
+
+		height: 450px;
+		min-width: 1850px;
+
+		margin: 0 auto;
+
+		overflow: hidden;
+
+		font-size: 0;
+		// transition: all 1s ease-in-out;
+
+		transition: all 1s ease-in-out;
+		@media (max-width: 520px) {
+			transform: translateX(-4%);
+		}
+		@media (max-width:768px) {
+			// transform: translateX(-2%);
+			height: 360px;
+		}
+
+		.cell-item {
+			@include border-radius(20px);
+
+			position: relative;
+
+			display: inline-block;
+
+			width: 500px;
+			height: 450px;
+
+			margin: 0 50px;
+
+			overflow: auto;
+
+			font-size: 16px;
+
+			vertical-align: top;
+
+			background-color: $background-box;
+
+			transition: all 0.4s ease-in-out;
+			// @media (max-width: 520px) {
+
+			// }
+			// @media (max-width: 420px) {
+			// 	width: 8%;
+			// 	height: 350px;
+
+			// 	margin: 0 10px;
+			// }
+
+			@media (max-width: 768px) {
+				width: 22%;
+				height: 350px;
+
+				margin: 0 10px;
+			}
+			@media (max-width: 561px) {
+				width: 16%;
+				height: 350px;
+
+				margin: 0 10px;
+			}
+
+			&:nth-child(2) {
+				background-color: $background-saldo;
+			}
+			&.cell-item--calendar {
+				background-image: url('../img/icon-calendar.png');
+				background-position: center;
+				background-repeat: no-repeat;
+
+				opacity: 0.2;
+			}
+		}
+	}
+	.control {
+		display: block;
+
+		width: 70px;
+
+		margin: 0 auto;
+		margin-top: 20px;
+		.dots {
+			display: inline-block;
+
+			width: 20px;
+			height: 20px;
+
+			border: solid 1px $background-saldo;
+			border-radius: 5px;
+			&.active {
+				border: solid 1px #ffffff;
+			}
+		}
+	}
+}
+.value {
+	position: relative;
+
+	width: 100%;
+	max-height: 200px;
+
+	padding: 15px;
+
+	overflow: hidden;
+
+	font-size: 0;
+
+	border-bottom: 1px solid $border-bottom-saldo;
+
+	transition: all 0.5s ease;
+	h4 {
+		margin-bottom: 0;
+	}
+	.item-list {
+		display: inline-block;
+
+		font-size: 16px;
+		font-family: $font-bold;
+
+		vertical-align: middle;
+		h4 {
+			font-size: 16px;
+		}
+		[data-value] {
+			font-size: 20px;
+		}
+	}
+	.value-tools {
+		width: 10%;
+
+		// padding-right: 2%;
+		img {
+			width: 100%;
+
+			padding: 6px;
+		}
+	}
+	.value-info {
+		width: 76%;
+
+		margin-left: 4%;
+	}
+	.value-trash {
+		width: 10%;
+
+		text-align: right;
+	}
+	&.remove {
+		max-height: 0;
+
+		animation-name: remove;
+		animation-duration: 1s;
+	}
+}
+
+@keyframes remove {
+	from {
+		padding: 10;
+	}
+	to {
+		top: -100px;
+
+		padding: 0;
+	}
+}
+
+body .grid-padding-x > .cell {
+	padding-right: 0;
+	padding-left: 0;
+}
+@media print, screen and (min-width: 40em) {
+	.grid-padding-x > .cell {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
