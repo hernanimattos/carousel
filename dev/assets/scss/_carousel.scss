@@ -29,14 +29,12 @@ div.carousel-callout {
 		overflow: hidden;
 
 		font-size: 0;
-		// transition: all 1s ease-in-out;
 
 		transition: all 1s ease-in-out;
 		@media (max-width: 520px) {
 			transform: translateX(-4%);
 		}
 		@media (max-width:768px) {
-			// transform: translateX(-2%);
 			height: 360px;
 		}
 
@@ -61,15 +59,6 @@ div.carousel-callout {
 			background-color: $background-box;
 
 			transition: all 0.4s ease-in-out;
-			// @media (max-width: 520px) {
-
-			// }
-			// @media (max-width: 420px) {
-			// 	width: 8%;
-			// 	height: 350px;
-
-			// 	margin: 0 10px;
-			// }
 
 			@media (max-width: 768px) {
 				width: 22%;
@@ -109,10 +98,10 @@ div.carousel-callout {
 			width: 20px;
 			height: 20px;
 
-			border: solid 1px $background-saldo;
+			border: solid 1px #0c6880;
 			border-radius: 5px;
 			&.active {
-				border: solid 1px #ffffff;
+				border: solid 1px $background-saldo;
 			}
 		}
 	}
@@ -180,11 +169,15 @@ div.carousel-callout {
 @keyframes remove {
 	from {
 		padding: 10;
+
+		overflow: hidden;
 	}
 	to {
 		top: -100px;
 
 		padding: 0;
+
+		border: none;
 	}
 }
 

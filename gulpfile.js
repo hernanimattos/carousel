@@ -20,6 +20,8 @@ const sassPath = [
 	'node_modules/foundation-sites/scss'
 ]
 
+console.log(sassPath, 'llll')
+
 const ENVORIMENT  = {
 	assets:'/assets',
 	nodemodules: './node_modules/',
@@ -71,13 +73,11 @@ gulp.task('css',function () {
 	return gulp
     .src(`${ENVORIMENT.dev.root}/${ENVORIMENT.assets}/${ENVORIMENT.dev.css}`)
     .on("error", sass.logError)
-    .pipe($.sass({
-        includePaths: sassPath,
-        outputStyle: "expanded"
-      }).on("error", $.sass.logError))
+    .pipe($.sass().on("error", $.sass.logError))
     .pipe($.autoprefixer({
         browsers: ["last 3 versions", "> 1%", "ie 9", "Firefox ESR", "iOS 7"]
-      }))
+	  }))
+
     .pipe(postcss(plugins))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write("."))
