@@ -113,6 +113,8 @@ div.carousel-callout {
 			width: 20px;
 			height: 20px;
 
+			cursor: pointer;
+
 			border: solid 1px #0c6880;
 			border-radius: 5px;
 			&.active {
@@ -171,6 +173,8 @@ div.carousel-callout {
 		width: 10%;
 
 		text-align: right;
+
+		cursor: pointer;
 	}
 	&.remove {
 		max-height: 0;

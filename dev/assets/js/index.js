@@ -46,7 +46,15 @@ class Carousel {
   getItemToRemove() {
     const item = this.trashItem.map(trash => {
       trash.addEventListener("click", (e)=> {
-		const parent = e.target.parentNode.parentNode;
+		e.stopPropagation;
+		let parent = '';
+
+		console.log(e.target.tagName)
+		if(e.target.tagName == 'IMG'){
+			parent = e.target.parentNode.parentNode;
+		}else{
+			parent = e.target.parentNode;
+		}
         const item = new Promise((resolve, reject) => {
           const addClass = parent.classList.add("remove");
           setTimeout(() => {
