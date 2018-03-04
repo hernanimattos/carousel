@@ -30,13 +30,12 @@ div.carousel-callout {
 		overflow: hidden;
 
 		font-size: 0;
-		// margin: 0 auto;
 
 		transform: translateX(0%);
 
 		transition: all 1s ease ;
 
-		// transition-property: margin;
+
 		@media (max-width: 520px) {
 			transform: translateX(-4%);
 		}
@@ -45,7 +44,6 @@ div.carousel-callout {
 		}
 
 		&.animate-item {
-			// transut;
 			transition: all 1s ease ;
 		}
 		.cell-item {
@@ -158,7 +156,6 @@ div.carousel-callout {
 	.value-tools {
 		width: 10%;
 
-		// padding-right: 2%;
 		img {
 			width: 100%;
 
@@ -195,13 +192,5 @@ div.carousel-callout {
 		padding: 0;
 
 		border: none;
-	}
-}
-
-@keyframes animate {
-	from {
-	}
-	to {
-		// transition: all 0.4s linear;
 	}
 }
