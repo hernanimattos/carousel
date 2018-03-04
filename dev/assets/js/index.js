@@ -18,7 +18,7 @@ class Carousel {
     const dots = Array.from(this.dots)
     dots.map((d, i) => {
       d.addEventListener("click", e => {
-		r.map(i=> i.classList.remove('active'));
+		dots.map(i=> i.classList.remove('active'));
 		e.target.classList.add("active");
         this.moveSlide(i);
       });

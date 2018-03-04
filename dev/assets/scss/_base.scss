@@ -19,3 +19,34 @@ h6,
 h6 {
 	font-family: 'Averta Regular';
 }
+body .grid-padding-x > .cell {
+	padding-right: 0;
+	padding-left: 0;
+}
+@media print, screen and (min-width: 40em) {
+	.grid-padding-x > .cell {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+blockquote,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+p,
+pre,
+td,
+th,
+ul {
+	margin: unset;
+}

@@ -12,7 +12,8 @@ div.carousel-callout {
 
 	background-color: $background;
 
-	transition: all 1s ease-in-out;
+	animation-name: animate;
+	animation-duration: 1s;
 
 	@media (max-width: 768px) {
 		width: 90%;
@@ -21,16 +22,21 @@ div.carousel-callout {
 	.carousel-wrapper {
 		position: relative;
 
+		display: inline-block;
+
 		height: 450px;
 		min-width: 1850px;
-
-		margin: 0 auto;
 
 		overflow: hidden;
 
 		font-size: 0;
+		// margin: 0 auto;
 
-		transition: all 1s ease-in-out;
+		transform: translateX(0%);
+
+		transition: all 1s ease ;
+
+		// transition-property: margin;
 		@media (max-width: 520px) {
 			transform: translateX(-4%);
 		}
@@ -38,6 +44,10 @@ div.carousel-callout {
 			height: 360px;
 		}
 
+		&.animate-item {
+			// transut;
+			transition: all 1s ease ;
+		}
 		.cell-item {
 			@include border-radius(20px);
 
@@ -48,6 +58,7 @@ div.carousel-callout {
 			width: 500px;
 			height: 450px;
 
+			margin: 0 auto;
 			margin: 0 50px;
 
 			overflow: auto;
@@ -58,7 +69,10 @@ div.carousel-callout {
 
 			background-color: $background-box;
 
-			transition: all 0.4s ease-in-out;
+			animation-name: animate;
+			animation-duration: 1s;
+			transition: all 1s ease ;
+
 
 			@media (max-width: 768px) {
 				width: 22%;
@@ -71,6 +85,9 @@ div.carousel-callout {
 				height: 350px;
 
 				margin: 0 10px;
+			}
+			.destaque {
+				color: $bottom-line-color;
 			}
 
 			&:nth-child(2) {
@@ -181,13 +198,10 @@ div.carousel-callout {
 	}
 }
 
-body .grid-padding-x > .cell {
-	padding-right: 0;
-	padding-left: 0;
-}
-@media print, screen and (min-width: 40em) {
-	.grid-padding-x > .cell {
-		padding-right: 0;
-		padding-left: 0;
+@keyframes animate {
+	from {
+	}
+	to {
+		// transition: all 0.4s linear;
 	}
 }
