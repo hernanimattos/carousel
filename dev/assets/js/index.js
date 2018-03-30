@@ -89,6 +89,7 @@ class Carousel {
   setTotalValue() {
 
 	this.dataValues = Array.from(document.querySelectorAll("[data-value]"));
+
 	if(this.calculateTotal() == 0){
 
 		this.totalCash.textContent = 'Você faliu';
@@ -109,4 +110,5 @@ class Carousel {
   }
 }
 new Carousel();
+
 
